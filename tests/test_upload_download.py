@@ -35,7 +35,6 @@ def test_branches(test_app):
 
 def test_get_branch_tree(test_app):
     branch_tree = test_app.getBranchTree("master")
-    print(branch_tree)
 
     assert branch_tree.exists("bin")
     assert branch_tree.exists("README.md")
