@@ -2,7 +2,7 @@ import pytest
 import os
 import json
 import sys
-from upload_download.upload_download_app import UploadDownloadApp
+from uploaddownload.upload_download_app import UploadDownloadApp
 
 
 @pytest.fixture

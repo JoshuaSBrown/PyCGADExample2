@@ -1,5 +1,5 @@
 import argparse
-from upload_download.upload_download_app import UploadDownloadApp
+from uploaddownload.upload_download_app import UploadDownloadApp
 
 
 def main(**kwargs):
