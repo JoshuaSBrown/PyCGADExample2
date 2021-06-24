@@ -1,6 +1,7 @@
 import pytest
 import os
 import json
+import sys
 from upload_download.upload_download_app import UploadDownloadApp
 
 
@@ -55,8 +56,11 @@ def test_get_contents(test_app):
 
 
 def test_upload_remove_file(test_app):
+
+    test_branch = "test_upload_remove_file_python"
+    test_branch += str(sys.version_info[0]) + "_" + str(sys.version_info[1])
+
     # Check that test_upload_remove_file branch exists
-    test_branch = "test_upload_remove_file"
     branches = test_app.branches
     found_test_branch = False
     default_branch = None
