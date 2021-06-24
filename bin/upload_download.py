@@ -4,7 +4,7 @@ from uploaddownload.upload_download_app import UploadDownloadApp
 
 def main(**kwargs):
 
-    app = StatusApp(kwargs["verbose"])
+    app = UploadDownloadApp(kwargs["verbose"])
     app.initialize(pem_file=kwargs["permissions"])
 
 
