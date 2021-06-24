@@ -4,7 +4,7 @@ import os
 
 class UploadDownloadApp(GitHubApp):
     def __init__(self, verbosity_in=0):
-        """Upload Download app can upload and download files from repo and its wiki"""
+        """Upload Download app can upload and download files from repo and its wiki."""
         if isinstance(verbosity_in, list):
             verbosity_in = verbosity_in[0]
         super().__init__(
