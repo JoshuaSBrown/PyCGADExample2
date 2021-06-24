@@ -3,6 +3,7 @@ import os
 import json
 from upload_download.upload_download_app import UploadDownloadApp
 
+
 @pytest.fixture
 def test_app():
     """Sets up a class with authentication to the PyCGADExample2 repository."""
@@ -21,6 +22,7 @@ def test_app():
 
     return app
 
+
 def test_branches(test_app):
     branches = test_app.branches
     found_master = False
@@ -30,25 +32,28 @@ def test_branches(test_app):
             break
     assert found_master
 
+
 def test_get_branch_tree(test_app):
-   branch_tree = test_app.getBranchTree("master")
-   print(branch_tree)
+    branch_tree = test_app.getBranchTree("master")
+    print(branch_tree)
 
-   assert branch_tree.exists("bin")
-   assert branch_tree.exists("README.md")
+    assert branch_tree.exists("bin")
+    assert branch_tree.exists("README.md")
 
-   assert branch_tree.type("bin") == "dir"
-   assert branch_tree.type("README.md") == "file"
+    assert branch_tree.type("bin") == "dir"
+    assert branch_tree.type("README.md") == "file"
 
-   rel_paths = branch_tree.getRelativePaths("test_upload_download.py")
-   assert len(rel_paths) == 1
-   assert rel_paths[0] == "./tests/test_upload_download.py"
+    rel_paths = branch_tree.getRelativePaths("test_upload_download.py")
+    assert len(rel_paths) == 1
+    assert rel_paths[0] == "./tests/test_upload_download.py"
+
 
 def test_get_contents(test_app):
-   branch_content = test_app.getContents("master")
+    branch_content = test_app.getContents("master")
 
-   assert "./bin" in branch_content
-   assert "./README.md" in branch_content
+    assert "./bin" in branch_content
+    assert "./README.md" in branch_content
+
 
 def test_upload_remove_file(test_app):
     # Check that test_upload_remove_file branch exists
@@ -103,7 +108,6 @@ def test_upload_remove_file(test_app):
     # branch tree to synchronize the contents
     test_app.refreshBranchCache()
     branch_tree = test_app.getBranchTree(test_branch)
-    
-    # Now we should be able to verify that the file has been uploaded
-    assert branch_tree.exists(sample_file_path) 
 
+    # Now we should be able to verify that the file has been uploaded
+    assert branch_tree.exists(sample_file_path)
