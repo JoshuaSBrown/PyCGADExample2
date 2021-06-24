@@ -60,6 +60,7 @@ def test_upload_remove_file(test_app):
     test_branch = "test_upload_remove_file_python"
     test_branch += str(sys.version_info[0]) + "_" + str(sys.version_info[1])
 
+    print("Test branch is {}".format(test_branch))
     # Check that test_upload_remove_file branch exists
     branches = test_app.branches
     found_test_branch = False
