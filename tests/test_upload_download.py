@@ -94,7 +94,7 @@ def test_upload_remove_file(test_app):
 
     # Now we are going to verify that the file no longer exists on the github
     # repository, we will update our branch tree cache in our app
-    test_app.refreshBranchTreeCache()
+    test_app.refreshBranchTreeCache(test_branch)
     # Refresh the actual branch tree object
     branch_tree = test_app.getBranchTree(test_branch)
     # At this point the sample file should not exist
@@ -114,7 +114,7 @@ def test_upload_remove_file(test_app):
     # At this point the file should have been uploaded to the github repository
     # on the specified test branch, so we will once again refresh our local
     # branch tree to synchronize the contents
-    test_app.refreshBranchTreeCache()
+    test_app.refreshBranchTreeCache(test_branch)
     branch_tree = test_app.getBranchTree(test_branch)
 
     # Now we should be able to verify that the file has been uploaded
