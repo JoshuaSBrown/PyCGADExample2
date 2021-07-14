@@ -66,11 +66,15 @@ def test_upload_remove_file(test_app):
     found_test_branch = False
     default_branch = None
     for branch in branches:
+        print("Cycling existing branches {}".format(branch))
         if branch == test_branch:
+            print("Found branch {}".format(test_branch))
             found_test_branch = True
         elif branch == "master":
+            print("Found master branch setting default to master")
             default_branch = "master"
         elif branch == "main":
+            print("Found main branch setting default to main")
             default_branch = "main"
 
     # If it doesn't exist create a new branch by splitting off of whatever
