@@ -6,6 +6,7 @@ def main(**kwargs):
 
     app = UploadDownloadApp(kwargs["verbose"])
     app.initialize(pem_file=kwargs["permissions"])
+    app.upload(kwargs["upload"], branch="figures")
 
 
 if __name__ == "__main__":
@@ -15,14 +16,20 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(message)
 
     desc = "Permissions file, allows us to interact with the github repository"
-
     parser.add_argument(
-        "--permissions", "-p", type=str, nargs=1, required=True, help=desc
+        "--permissions" "-p", type=str, nargs=1, required=True, help=desc
+    )
+
+    desc = "Upload, pick a local file to upload, will upload to the figures \
+            branch."
+    parser.add_argument(
+        "--upload", "-u", type=str, nargs=1, required=False
     )
 
     desc = "Vebosity of output."
 
-    parser.add_argument("--verbose", "-v", type=int, nargs=1, default=0, help=desc)
+    parser.add_argument("--verbose", "-v", type=int, nargs=1, default=0,
+                        help=desc)
 
     args = parser.parse_args()
 
