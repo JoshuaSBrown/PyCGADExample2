@@ -6,7 +6,7 @@ def main(**kwargs):
 
     app = UploadDownloadApp(kwargs["verbose"])
     print(kwargs)
-    app.initialize(pem_file=kwargs["permissions"])
+    app.initialize(pem_file=kwargs["permissions"], create_branch=True)
     if "upload" in kwargs:
         app.upload(kwargs["upload"], branch="figures")
 
