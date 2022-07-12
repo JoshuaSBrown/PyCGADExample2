@@ -5,10 +5,10 @@ from uploaddownload.upload_download_app import UploadDownloadApp
 def main(**kwargs):
 
     app = UploadDownloadApp(kwargs["verbose"])
-    print(kwargs["permissions"])
-    app.initialize(pem_file=kwargs["permissions"])
-    if "upload" in kwargs:
-        app.upload(kwargs["upload"], branch="figures")
+    print(kwargs)
+    # app.initialize(pem_file=kwargs["permissions"])
+    # if "upload" in kwargs:
+    #    app.upload(kwargs["upload"], branch="figures")
 
 
 if __name__ == "__main__":
@@ -24,14 +24,11 @@ if __name__ == "__main__":
 
     desc = "Upload, pick a local file to upload, will upload to the figures \
             branch."
-    parser.add_argument(
-        "--upload", "-u", type=str, nargs=1, required=False
-    )
+    parser.add_argument("--upload", "-u", type=str, nargs=1, required=False)
 
     desc = "Vebosity of output."
 
-    parser.add_argument("--verbose", "-v", type=int, nargs=1, default=0,
-                        help=desc)
+    parser.add_argument("--verbose", "-v", type=int, nargs=1, default=0, help=desc)
 
     args = parser.parse_args()
 
