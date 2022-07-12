@@ -1,0 +1,9 @@
+argparse>=1.4.0
+cryptography>=37.0.4
+gitpython>=3.1.27
+matplotlib>=3.5.2
+numpy>=1.23.1
+pyjwt>=1.7.1
+pem>=21.2.0
+validators>=0.20.0
+pytest>=6.2.4

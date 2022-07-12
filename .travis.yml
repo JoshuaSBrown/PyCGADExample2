@@ -25,11 +25,14 @@ before_install:
 install:
   - ls
   - sudo apt-get install gnutls-bin libghc-gnutls-dev
-  - python3.8 -m pip install cryptography --upgrade
+  - python3.8 -m pip install -r requirements.txt
   - python3.8 -m pip install Py-CGAD/  # --user flag is not allowed in travis virtual env
   
 script:
   - echo "Display env variables"
   - env
   - python3.8 -m pytest -s
-  - PYTHONPATH=$PYTHONPATH:uploaddownload python3.8 ./bin/upload_download.py --permissions uploaddownloadapp.2021-06-10.private-key.pem
+  # Get a random wallpaper image from bing and upload it
+  - ./scripts/get_image.sh
+  - ls
+  - PYTHONPATH=$PYTHONPATH:uploaddownload python3.8 ./bin/upload_download.py --permissions  uploaddownloadapp.2021-06-10.private-key.pem --upload ./wallpaper.jpg
