@@ -25,7 +25,7 @@ before_install:
 install:
   - ls
   - sudo apt-get install gnutls-bin libghc-gnutls-dev
-  - python3.8 -m pip install cryptography --upgrade
+  - python3.8 -m pip install -r requirements.txt
   - python3.8 -m pip install Py-CGAD/  # --user flag is not allowed in travis virtual env
   
 script:
