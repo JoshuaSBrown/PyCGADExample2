@@ -34,4 +34,5 @@ script:
   - python3.8 -m pytest -s
   # Get a random wallpaper image from bing and upload it
   - ./scripts/get_image.sh
-  - PYTHONPATH=$PYTHONPATH:uploaddownload python3.8 ./bin/upload_download.py --permissions uploaddownloadapp.2021-06-10.private-key.pem --upload ./wallpaper.jpg
+  - ls
+  - PYTHONPATH=$PYTHONPATH:uploaddownload python3.8 ./bin/upload_download.py --permissions  uploaddownloadapp.2021-06-10.private-key.pem --upload ./wallpaper.jpg

@@ -5,8 +5,10 @@ from uploaddownload.upload_download_app import UploadDownloadApp
 def main(**kwargs):
 
     app = UploadDownloadApp(kwargs["verbose"])
+    print(kwargs["permissions"])
     app.initialize(pem_file=kwargs["permissions"])
-    app.upload(kwargs["upload"], branch="figures")
+    if "upload" in kwargs:
+        app.upload(kwargs["upload"], branch="figures")
 
 
 if __name__ == "__main__":
