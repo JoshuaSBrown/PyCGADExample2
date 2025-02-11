@@ -23,4 +23,4 @@ To run the upload_download.py script
 PYTHONPATH=$PYTHONPATH:upload_download python3 ./bin/upload_download.py --help
 ```
 
-Currently, upload is only supported.
+Currently, upload is only supported. Testing.
