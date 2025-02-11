@@ -3,7 +3,7 @@
 
 Shows a second concrete implementation of Py-CGAD. The upload download script
 is a simple script that allows you to upload and download files to the repo 
-and its wiki. 
+and its wiki. It interacts with the GitHub API.
 
 To test it
 
@@ -22,3 +22,5 @@ To run the upload_download.py script
 ```Bash
 PYTHONPATH=$PYTHONPATH:upload_download python3 ./bin/upload_download.py --help
 ```
+
+Currently, upload is only supported.
