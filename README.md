@@ -17,7 +17,7 @@ To see tests with printed output
 python3 -m pytest -s
 ```
 
-To run the upload_download.py script
+To run the upload_download.py script:
 
 ```Bash
 PYTHONPATH=$PYTHONPATH:upload_download python3 ./bin/upload_download.py --help
